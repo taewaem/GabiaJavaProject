@@ -2,15 +2,8 @@ package frame;
 
 
 import cart.Cart;
-import product.ProductList;
-import user.User;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 public class MainFrame extends JFrame {
 
@@ -25,7 +18,6 @@ public class MainFrame extends JFrame {
         setSize(800, 600);
         setLocationRelativeTo(null);        //화면 중앙에 띄우기
         setResizable(false);                //화면 사이즈 조절 x
-
 //      mainPanel.setLayout(null);          //래이아웃 없이 좌표로 위치 잡음
 
 //        //x버튼 클릭 시 시스템 종료
@@ -37,11 +29,6 @@ public class MainFrame extends JFrame {
 //            }
 //        };
 //        addWindowListener(windowListener);
-
-
-        JPanel northPanel = new NorthPanel(this);
-//        add(northPanel, BorderLayout.NORTH);
-
 
 
         JPanel storePanel = new StorePanel();

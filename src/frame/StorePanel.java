@@ -1,8 +1,6 @@
 package frame;
 
-import cart.Cart;
 import product.Product;
-import product.ProductList;
 import product.ProductService;
 
 import javax.swing.*;

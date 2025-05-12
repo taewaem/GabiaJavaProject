@@ -80,9 +80,8 @@ public class ProductPanel extends JPanel {
         setLayout(new CardLayout());
 
         JPanel panel = new JPanel(new BorderLayout());
-//        setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // 왼쪽: 이미지
+        // 왼쪽: 이미지패널
         JLabel imageLabel = new JLabel();
         URL imageUrl = getClass().getResource("/image/" + product.getName() + ".png");
         if (imageUrl != null) {
@@ -94,7 +93,10 @@ public class ProductPanel extends JPanel {
         imagePanel.add(imageLabel);
         panel.add(imagePanel, BorderLayout.WEST);
 
-        // 오른쪽: 정보
+        /**
+         * 오른쪽: 정보 패널
+         * 제품명, 설명, 가격, 버튼들
+         */
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
         infoPanel.setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 0));
@@ -106,7 +108,6 @@ public class ProductPanel extends JPanel {
         // 설명
         JLabel mainDescriptionLabel = new JLabel("주요 기능");
         mainDescriptionLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
-
         JLabel descriptionLabel = new JLabel(product.getDescription());
         descriptionLabel.setFont(new Font("맑은 고딕", Font.BOLD, 16));
 
@@ -115,12 +116,8 @@ public class ProductPanel extends JPanel {
         priceLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
         priceLabel.setForeground(new Color(108, 0, 255));
 
-//        // 건강기능식품
-//        JLabel healthMark = new JLabel("건강기능식품");
-//        healthMark.setFont(new Font("맑은 고딕", Font.PLAIN, 16));
 
-
-        // 수량 조절 (JSpinner)
+        // 수량 조절
         JPanel quantityPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel quantityLabel = new JLabel("수량:");
         quantityLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 14));
@@ -167,8 +164,6 @@ public class ProductPanel extends JPanel {
         // 구성 요소 추가
         infoPanel.add(nameLabel);
         infoPanel.add(Box.createVerticalStrut(30));
-//        infoPanel.add(healthMark);
-//        infoPanel.add(Box.createVerticalStrut(20));
         infoPanel.add(mainDescriptionLabel);
         infoPanel.add(Box.createVerticalStrut(5));
         infoPanel.add(descriptionLabel);

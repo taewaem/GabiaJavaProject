@@ -1,7 +1,5 @@
 package product;
 
-import javax.swing.*;
-import java.net.URL;
 
 public class Product {
     private String name;
