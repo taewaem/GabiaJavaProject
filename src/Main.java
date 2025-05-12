@@ -5,6 +5,10 @@ import frame.MainFrame;
 public class Main {
     public static void main(String[] args) {
 
+    	private String name = "kim";
+    	
+    	System.out.println(name);
+    	
         new MainFrame();
     }
 }
