@@ -5,17 +5,13 @@ import java.awt.*;
 
 public class FrameUtil {
 
-
-    /**
-     * 기존 컨테이너에서 모든 컴포넌트를 제거하고 새로운 패널로 교체합니다.
-     *
-     * @param container 전환 대상 (예: JFrame.getContentPane() 또는 JPanel)
-     * @param nextPanel 교체할 패널
-     */
-    public static void switchPanel(Container container, JPanel nextPanel) {
-        container.removeAll();
-        container.add(nextPanel);
-        container.revalidate();
-        container.repaint();
-    }
+//    public void changePanel(JPanel panel) {
+//
+//        panel.removeAll(); // 기존 컴포넌트 제거
+//        panel.setLayout(new FlowLayout());
+//        panel.add(new t); // ProductPanel 추가
+//        this.revalidate();
+//        this.repaint();
+//
+//    }
 }

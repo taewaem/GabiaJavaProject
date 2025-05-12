@@ -38,16 +38,16 @@ public class NorthPanel extends JPanel implements ActionListener {
         add(userPanel, BorderLayout.SOUTH);
 
         //이벤트 등록
-        joinButton.addActionListener(e -> {
-            JPanel joinPanel = new UserJoinForm();
-            FrameUtil.switchPanel(mainFrame.getContentPane(), joinPanel);
-        });
+//        joinButton.addActionListener(e -> {
+//            JPanel joinPanel = new UserJoinForm();
+//            FrameUtil.switchPanel(mainFrame.getContentPane(), joinPanel);
+//        });
 
-        loginButton.addActionListener(e -> {
-            // 로그인 버튼 클릭 시 LoginForm 패널로 교체
-            JPanel loginPanel = new UserLoginForm();
-            FrameUtil.switchPanel(mainFrame.getContentPane(), loginPanel);
-        });
+//        loginButton.addActionListener(e -> {
+//            // 로그인 버튼 클릭 시 LoginForm 패널로 교체
+//            JPanel loginPanel = new UserLoginForm();
+//            FrameUtil.switchPanel(mainFrame.getContentPane(), loginPanel);
+//        });
 
 
     }

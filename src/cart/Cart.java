@@ -40,13 +40,16 @@ public class Cart {
 //    }
 
 
-    private List<CartItem> items = new ArrayList<>();
-    private User user;
+    private static List<CartItem> items = new ArrayList<>();
 
+    private User user;
     public void addProduct(Product product, int quantity) {
         for (CartItem item : items) {
             if (item.getProduct().getName().equals(product.getName())) {
                 item.setQuantity(item.getQuantity() + quantity);
+                System.out.print("current cartList: ");
+                System.out.print(item.getProduct().getName());
+                System.out.println(item.getQuantity());
                 return;
             }
         }

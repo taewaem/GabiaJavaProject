@@ -1,15 +1,21 @@
 package frame;
 
+import cart.Cart;
 import product.Product;
 import product.ProductList;
+import product.ProductService;
 
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
+import java.util.List;
 
 
 public class StorePanel extends JPanel{
 
+    private ProductService productService = new ProductService();
+
+    private List<Product> products = productService.getAllProduct();
 
     private JTextField searchField;
     private JPanel cartPanel;
@@ -45,19 +51,6 @@ public class StorePanel extends JPanel{
         addProductItems();  // 영양제 항목 추가
         centerPanel.add(productPanel);
 
-
-        /**
-         * 오른쪽 컨테이너
-         * 장바구니 목록
-         */
-        JPanel rightPanel = new JPanel();
-        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
-        add(rightPanel, BorderLayout.EAST);
-
-
-        JLabel cartLabel = new JLabel("장바구니");
-
-
 //        // 검색창
 //        JPanel searchPanel = new JPanel(new FlowLayout());
 //        searchField = new JTextField(50);
@@ -74,7 +67,8 @@ public class StorePanel extends JPanel{
 
     //영양제 목록 추가
     private void addProductItems() {
-        for (Product product : ProductList.getAllProduct()) {
+
+        for (Product product : products) {
 
             JPanel sp = new JPanel();
             sp.setSize(new Dimension(170, 170));
@@ -118,6 +112,9 @@ public class StorePanel extends JPanel{
                 productPanel.add(itemPanel);
 
             }
+            else {
+                System.out.println("image doesn't exist");
+            }
         }
     }
 
@@ -131,7 +128,21 @@ public class StorePanel extends JPanel{
     }
 
     private void showProductDetail(String productName) {
-        JOptionPane.showMessageDialog(this, productName + " 상세 페이지로 이동합니다.");
+//        JOptionPane.showMessageDialog(this, productName + " 상세 페이지로 이동합니다.");
+        System.out.println("선택된 영양제: " + productName);
+        for (Product p : products) {
+            if (!productName.equals(p.getName())) {
+            }
+            else {
+                System.out.println(p.getName() + " page");
+
+                this.removeAll(); // 기존 컴포넌트 제거
+                this.setLayout(new FlowLayout());
+                this.add(new ProductPanel(p)); // ProductPanel 추가
+                this.revalidate();
+                this.repaint();
+            }
+        }
     }
 
 }

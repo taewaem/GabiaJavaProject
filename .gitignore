@@ -22,6 +22,14 @@ bin/
 /nbdist/
 /.nb-gradle/
 
+
+src/frame/CenterPanel.java
+src/frame/FrameUtil.java
+src/frame/LeftPanel.java
+src/frame/NorthPanel.java
+src/frame/SouthPanel.java
+src/user
+
 ### VS Code ###
 .vscode/
 
