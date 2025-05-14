@@ -4,20 +4,26 @@ package frame;
 import cart.Cart;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.Stack;
 
 public class MainFrame extends JFrame {
 
-    Cart cart = new Cart();
-
+    public static Stack<JPanel> pageStack = new Stack<>();
+    public static JFrame mainFrame;
+    private Cart cart = new Cart();
     public MainFrame() {
 
         System.out.println("main frame");
 
-        setTitle("상점");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(800, 600);
-        setLocationRelativeTo(null);        //화면 중앙에 띄우기
-        setResizable(false);                //화면 사이즈 조절 x
+        mainFrame = this;
+        mainFrame.setLayout(new CardLayout());
+
+        mainFrame.setTitle("상점");
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        mainFrame.setSize(800, 600);
+        mainFrame.setLocationRelativeTo(null);        //화면 중앙에 띄우기
+        mainFrame.setResizable(false);                //화면 사이즈 조절 x
 //      mainPanel.setLayout(null);          //래이아웃 없이 좌표로 위치 잡음
 
 //        //x버튼 클릭 시 시스템 종료
@@ -32,13 +38,12 @@ public class MainFrame extends JFrame {
 
 
         JPanel storePanel = new StorePanel();
-        add(storePanel);
-
+        mainFrame.add(storePanel);
 //        JPanel cartPanel = new CartPanel(cart);
 //        setContentPane(new CartPanel(cart));
 
 
-        setVisible(true);
+        mainFrame.setVisible(true);
     }
 
 }

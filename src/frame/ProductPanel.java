@@ -5,13 +5,11 @@ import product.Product;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.URL;
 
 public class ProductPanel extends JPanel {
 
-
+    private UtilPanel utilPanel = new UtilPanel();
     private JButton cartButton;
     private JButton backButton;
 
@@ -20,7 +18,6 @@ public class ProductPanel extends JPanel {
 
         cart = new Cart();
 
-        setLayout(new CardLayout());
 
         JPanel panel = new JPanel(new BorderLayout());
 
@@ -96,7 +93,7 @@ public class ProductPanel extends JPanel {
 
         //이전 버튼 클릭 시
         backButton.addActionListener(e -> {
-
+            utilPanel.goBackPage();
             System.out.println("이전 페이지로 이동");
         });
 

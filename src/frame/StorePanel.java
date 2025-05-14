@@ -15,6 +15,7 @@ public class StorePanel extends JPanel{
 
     private List<Product> products = productService.getAllProduct();
 
+    private UtilPanel utilPanel = new UtilPanel();
     private JTextField searchField;
     private JPanel cartPanel;
     private JPanel productPanel;
@@ -45,19 +46,8 @@ public class StorePanel extends JPanel{
         productLabel.setAlignmentX(Component.CENTER_ALIGNMENT);               //가운데로 정렬
         centerPanel.add(productLabel);
         productPanel = new JPanel(new GridLayout(2, 5, 5, 5));
-        JScrollPane scrollPane = new JScrollPane(productPanel);
         addProductItems();  // 영양제 항목 추가
         centerPanel.add(productPanel);
-
-//        // 검색창
-//        JPanel searchPanel = new JPanel(new FlowLayout());
-//        searchField = new JTextField(50);
-//        JButton searchButton = new JButton("검색");
-//        searchButton.addActionListener(e -> searchProduct(searchField.getText()));
-//        searchPanel.add(searchField);
-//        searchPanel.add(searchButton);
-//        centerPanel.add(searchPanel);
-
 
         setVisible(true);
     }
@@ -134,11 +124,7 @@ public class StorePanel extends JPanel{
             else {
                 System.out.println(p.getName() + " page");
 
-                this.removeAll(); // 기존 컴포넌트 제거
-                this.setLayout(new FlowLayout());
-                this.add(new ProductPanel(p)); // ProductPanel 추가
-                this.revalidate();
-                this.repaint();
+                utilPanel.goToPage(new ProductPanel(p));    //ProductPanel로 이동
             }
         }
     }
