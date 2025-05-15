@@ -295,7 +295,7 @@ public class FoodMain extends JFrame implements ActionListener
 		this.repaint();
 	}
 	
-	public static void main(String[] args) 
+	public static void main(String[] args)//테스트 용 Main 입니다.
 	{
 		FoodMain obj = new FoodMain();
 	}
