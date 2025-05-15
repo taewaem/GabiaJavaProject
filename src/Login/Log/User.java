@@ -1,4 +1,4 @@
-package UserMain;
+package User;
 
 public class User {
 
@@ -48,7 +48,7 @@ public class User {
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
-
+	
 	public String getPhnumber() {
 		return phnumber;
 	}
