@@ -1,4 +1,4 @@
-package cal.food;
+package exercise.cal.food;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class FoodMain {
 	public static String foodName="";
 	public static double foodKcal;
 
-	public static void main(String[] args) 
+	public FoodMain()
 	{
 		int serving;
 		

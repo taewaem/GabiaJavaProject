@@ -1,4 +1,4 @@
-package cal.exercise;
+package exercise.cal.exercise;
 
 public class Exercise 
 {

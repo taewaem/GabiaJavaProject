@@ -1,4 +1,4 @@
-package cal.food;
+package exercise.cal.food;
 
 public class Food 
 {

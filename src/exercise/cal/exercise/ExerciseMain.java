@@ -1,4 +1,4 @@
-package cal.exercise;
+package exercise.cal.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class ExerciseMain {
 	
 	//public static double exer="";
 	
-	public static void main(String[] args) 
+	public ExerciseMain()
 	{
 
 		int min;
