@@ -9,6 +9,7 @@ public class Cart {
 
     private static List<CartItem> items = new ArrayList<>();
 
+
     public void addProduct(Product product, int quantity) {
         for (CartItem item : items) {
             if (item.getProduct().getName().equals(product.getName())) {
