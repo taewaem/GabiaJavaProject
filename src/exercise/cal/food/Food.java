@@ -29,7 +29,7 @@ public class Food
 	@Override
 	public String toString()//toString 오버라이딩
 	{
-		return "음식 이름: "+foodName+" 음식의 100g당 칼로리: "+foodKcal;
+		return "음식 이름: "+foodName+" 음식의 1인분 당 칼로리: "+foodKcal;
 	}
 	
 	
