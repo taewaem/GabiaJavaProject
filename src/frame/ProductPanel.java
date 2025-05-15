@@ -14,6 +14,8 @@ public class ProductPanel extends JPanel {
     private JButton backButton;
 
     private Cart cart;
+
+
     public ProductPanel(Product product) {
 
         cart = new Cart();
@@ -76,13 +78,6 @@ public class ProductPanel extends JPanel {
         cartButton.setFont(new Font("맑은 고딕", Font.BOLD, 16));
         cartButton.setPreferredSize(new Dimension(100, 40));
 
-        //장바구니 버튼 클릭시
-        cartButton.addActionListener(e -> {
-            int quantity = (Integer) quantitySpinner.getValue();
-            cart.addProduct(product, quantity);
-            System.out.println(quantity + "개 " + product.getName() + " 장바구니에 추가");
-        });
-
         //이전 버튼
         backButton = new JButton("이전");
         backButton.setBackground(new Color(128, 128, 128));
@@ -91,11 +86,25 @@ public class ProductPanel extends JPanel {
         backButton.setFont(new Font("맑은 고딕", Font.BOLD, 16));
         backButton.setPreferredSize(new Dimension(80, 40));
 
+
+        //장바구니 버튼 클릭시
+        cartButton.addActionListener(e -> {
+            int quantity = (Integer) quantitySpinner.getValue();
+            
+            cart.addProduct(product, quantity);
+            System.out.println(quantity + "개 " + product.getName() + " 장바구니에 추가");
+
+            //장바구니 패널 이동( 삭제할 것 따로 장바구니 버튼 존재)
+            utilPanel.goToPage(new CartPanel(cart));
+        });
+
         //이전 버튼 클릭 시
         backButton.addActionListener(e -> {
             utilPanel.goBackPage();
             System.out.println("이전 페이지로 이동");
         });
+
+
 
         buttonPanel.add(cartButton);
         buttonPanel.add(backButton);
@@ -111,7 +120,6 @@ public class ProductPanel extends JPanel {
         infoPanel.add(priceLabel);
         infoPanel.add(Box.createVerticalStrut(20));
         infoPanel.add(quantityPanel);
-        infoPanel.add(cartButton);
         infoPanel.add(buttonPanel);
 
         panel.add(infoPanel, BorderLayout.EAST);

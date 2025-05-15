@@ -7,6 +7,10 @@ import java.util.List;
 
 public class Cart {
 
+
+    public Cart() {
+    }
+
     private static List<CartItem> items = new ArrayList<>();
 
     public void addProduct(Product product, int quantity) {
@@ -51,4 +55,11 @@ public class Cart {
                 .mapToInt(item -> (int) (item.getProduct().getPrice() * item.getQuantity()))
                 .sum();
     }
+
+
+    // 특정 상품 삭제
+    public void removeItem(Product product) {
+        items.removeIf(item -> item.getProduct().equals(product));
+    }
+
 }

@@ -80,7 +80,9 @@ public class StorePanel extends JPanel{
 
                 //가격 라벨 생성
                 JLabel priceLabel = new JLabel(String.valueOf(product.getPrice()) + "원", SwingConstants.LEFT);
-                priceLabel.setFont(new Font("맑은 고딕", Font.BOLD, 13));
+                priceLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 13));
+                priceLabel.setForeground(new Color(108, 0, 255));
+
 
                 // 버튼 + 라벨 + 가격을 담을 panel 생성
                 JPanel itemPanel = new JPanel();
@@ -111,6 +113,9 @@ public class StorePanel extends JPanel{
         if (query.equalsIgnoreCase("비타민C")) {
             showProductDetail("비타민C");
         } else {
+
+            //상세페이지로 화면 전환 코드
+
             JOptionPane.showMessageDialog(this, query + " 해당 상품이 없습니다.");
         }
     }

@@ -39,9 +39,6 @@ public class MainFrame extends JFrame {
 
         JPanel storePanel = new StorePanel();
         mainFrame.add(storePanel);
-//        JPanel cartPanel = new CartPanel(cart);
-//        setContentPane(new CartPanel(cart));
-
 
         mainFrame.setVisible(true);
     }
