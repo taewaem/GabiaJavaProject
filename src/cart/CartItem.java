@@ -8,6 +8,15 @@ public class CartItem {
 
     private int quantity;
 
+//    private User user;
+
+
+//    public CartItem(Product product, int quantity, User user) {
+//        this.product = product;
+//        this.quantity = quantity;
+//        this.user = user;
+//    }
+//
     public CartItem(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
